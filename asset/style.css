@@ -1,1 +1,37 @@
 /* CSS will be basic formatting for the quiz container, buttons, and the overall page.  */
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    margin-top: 50px;
+  }
+  
+  #quiz-container {
+    margin-top: 50px;
+  }
+  
+  #choices {
+    margin-top: 20px;
+  }
+  
+  #start-btn,
+  #submit-btn,
+  #save-btn {
+    margin-top: 20px;
+  }
+  
+  #game-over {
+    display: none;
+    margin-top: 50px;
+  }
+  
+  #initials {
+    margin-top: 10px;
+  }
+  
+  #error-message {
+    color: red;
+    margin-top: 10px;
+  }
