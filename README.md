@@ -1,7 +1,7 @@
 # Java-Quiz
 Timed quiz on javascript fundamentals
 
-# Functionality: 
+## Functionality: 
 
 1. User clicks start button to begin quiz
 2. User chooses their answer, which is stored to local storage.
