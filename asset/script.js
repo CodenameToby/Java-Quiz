@@ -31,6 +31,7 @@ const initialsInput = document.getElementById("initials");
 const scoreEl = document.getElementById("score");
 let currentQuestionIndex = 0;
 let timeLeft = 60;
+let correctAnswers = 0;
 let timerInterval;
 
 // Event listeners
@@ -79,7 +80,7 @@ function checkAnswer(event) {
   const selectedAnswer = selectedChoice.textContent;
 
   if (selectedAnswer === currentQuestion.correctAnswer) {
-    score++;
+    correctAnswers++;
   } else {
     timeLeft -= 10;
     if (timeLeft < 0) {
@@ -100,7 +101,8 @@ function endQuiz() {
   clearInterval(timerInterval);
   document.getElementById("quiz-container").style.display = "none";
   gameOverEl.style.display = "block";
-  document.getElementById("score").textContent = score;
+  document.getElementById("score").textContent = correctAnswers;
+  displayHighScores();
 }
 
 function  saveScore() {
@@ -112,12 +114,12 @@ function  saveScore() {
 
   // Save the score and initials 
   const scores = JSON.parse(localStorage.getItem("scores")) || [];
-  scores.push({ initials, score });
+  scores.push({ initials, score:correctAnswers });
   localStorage.setItem("scores", JSON.stringify(scores));
 
   alert("Score saved!");
   initialsInput.value = "";
-  errorEl.textContent = "";
+  
 
   displayHighScores();
 }
@@ -140,7 +142,7 @@ function displayHighScores() {
     const scoreCell = document.createElement("td");
     rankCell.textContent = index + 1;
     initialsCell.textContent = score.initials;
-    scoreCell.textContent = score.scores;
+    scoreCell.textContent = score.score;
     row.appendChild(rankCell);
     row.appendChild(initialsCell);
     row.appendChild(scoreCell);

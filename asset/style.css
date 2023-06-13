@@ -1,5 +1,6 @@
-/* CSS will be basic formatting for the quiz container, buttons, and the overall page.  */
-body {
+/* CSS will be basic formatting for the quiz container, buttons, high-score table
+ and the overall page.  */
+ body {
     text-align: center;
     font-family: Arial, sans-serif;
   }
@@ -35,3 +36,30 @@ body {
     color: red;
     margin-top: 10px;
   }
+  
+  #highScoresTable {
+    width: 300px;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  #highScoresTable th,
+  #highScoresTable td {
+    padding: 8px;
+    border: 1px solid black;
+  }
+  
+  #highScoresTable th {
+    background-color: lightblue
+  }
+  
+  #highScoresTable th:first-child {
+    width: 50px;
+  }
+  
+  #highScoresTable th:nth-child(2),
+  #highScoresTable td:nth-child(2) {
+    width: 100px;
+  }
+  
+  
